@@ -1,6 +1,6 @@
 import Entrada from "../components/Entrada";
 import Layout from "../components/Layout"
-
+import styles from '../styles/Blog.module.css'
 
 const blog = ({entradas}) => {
 
@@ -12,7 +12,7 @@ const blog = ({entradas}) => {
 
       <main className="contenedor">
         <h2 className="heading">Blog</h2>
-        <div>
+        <div className={styles.blog}>
             {entradas.map(entrada=>(
               <Entrada
               key={entrada.id}
@@ -31,7 +31,7 @@ const blog = ({entradas}) => {
 //esta función está corriendo en el servidor, aparece en la consola
 //tengo acceso a mis datos en este script.
 export async function getStaticProps(){
-  const url='http://localhost:1337/blogs';
+  const url=`${process.env.API_URL}/blogs`;
   const respuesta= await fetch(url);
   const entradas = await respuesta.json();
   

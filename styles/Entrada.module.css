@@ -1,3 +1,9 @@
+
+.entrada{
+    max-width: 80rem;
+    margin:0 auto;
+}
+
 .contenido{
     padding:2rem;
 }
@@ -15,4 +21,38 @@
     font-size: 1.6rem;
     color: var(--primary)
     
+}
+
+.resumen{
+    /* para lograr que el resumen se vea igual  y no esté desalineado */
+    display:-webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+    
+}
+
+.anchor{
+    margin-top: 2rem;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: 900;
+    color:var(--negro);
+    border:2px solid  var(--primary);
+    padding: 1rem 5rem;
+    transition-property: background-color;
+    transition-duration: .3s;
+}
+
+.anchor:hover{
+    background-color: var(--primary);
+    color: var(--blanco);
+}
+
+
+.texto{
+    white-space: pre-wrap;
 }
